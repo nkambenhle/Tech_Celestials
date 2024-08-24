@@ -1,0 +1,70 @@
+[{
+  "_id": {
+    "$oid": "66c9e6f28f7b7d1df3eb193c"
+  },
+  "Module_ID": 1,
+  "Module_Name": "Calulus"
+},
+{
+  "_id": {
+    "$oid": "66c9eb688f7b7d1df3eb195c"
+  },
+  "Module_ID": 2,
+  "Module_Name": "Biomechanics"
+},
+{
+  "_id": {
+    "$oid": "66c9eb688f7b7d1df3eb195d"
+  },
+  "Module_ID": 3,
+  "Module_Name": "Exercise Physiology"
+},
+{
+  "_id": {
+    "$oid": "66c9eb688f7b7d1df3eb195e"
+  },
+  "Module_ID": 4,
+  "Module_Name": "Motor Learning and Control"
+},
+{
+  "_id": {
+    "$oid": "66c9eb688f7b7d1df3eb195f"
+  },
+  "Module_ID": 5,
+  "Module_Name": "Sport Psychology"
+},
+{
+  "_id": {
+    "$oid": "66c9eb688f7b7d1df3eb1960"
+  },
+  "Module_ID": 6,
+  "Module_Name": "Human Anatomy"
+},
+{
+  "_id": {
+    "$oid": "66c9eb688f7b7d1df3eb1961"
+  },
+  "Module_ID": 7,
+  "Module_Name": "Nutrition and Physical Activity"
+},
+{
+  "_id": {
+    "$oid": "66c9eb688f7b7d1df3eb1962"
+  },
+  "Module_ID": 8,
+  "Module_Name": "Strength and Conditioning"
+},
+{
+  "_id": {
+    "$oid": "66c9eb688f7b7d1df3eb1963"
+  },
+  "Module_ID": 9,
+  "Module_Name": "Rehabilitation Sciences"
+},
+{
+  "_id": {
+    "$oid": "66c9eb688f7b7d1df3eb1964"
+  },
+  "Module_ID": 10,
+  "Module_Name": "Research Methods in Human Movement Science"
+}]

@@ -1,0 +1,175 @@
+[{
+  "_id": {
+    "$oid": "66c9e5768f7b7d1df3eb1931"
+  },
+  "User_ID": 1,
+  "Name": "John",
+  "Surname": "Doe",
+  "Username": "johndoe",
+  "Password": "hashed_password",
+  "Role": "Student",
+  "Email": "john.doe@example.com",
+  "LoggedIn": false,
+  "Modules": [
+    "Module1",
+    "Module2"
+  ],
+  "Field": "SpecificField"
+},
+{
+  "_id": {
+    "$oid": "66c9ea428f7b7d1df3eb1946"
+  },
+  "User_ID": 2,
+  "Name": "Alice",
+  "Surname": "Smith",
+  "Username": "alice.smith",
+  "Password": "password123",
+  "Role": "Student",
+  "Email": "alice.smith@example.com",
+  "LoggedIn": false,
+  "Modules": [
+    "Module1",
+    "Module2"
+  ],
+  "Field": "Computer Science"
+},
+{
+  "_id": {
+    "$oid": "66c9ea428f7b7d1df3eb1947"
+  },
+  "User_ID": 3,
+  "Name": "Bob",
+  "Surname": "Johnson",
+  "Username": "bob.johnson",
+  "Password": "password123",
+  "Role": "Lecturer",
+  "Email": "bob.johnson@example.com",
+  "LoggedIn": true,
+  "Modules": [
+    "Module3"
+  ],
+  "Field": "Mathematics"
+},
+{
+  "_id": {
+    "$oid": "66c9ea428f7b7d1df3eb1948"
+  },
+  "User_ID": 4,
+  "Name": "Charlie",
+  "Surname": "Brown",
+  "Username": "charlie.brown",
+  "Password": "password123",
+  "Role": "Student",
+  "Email": "charlie.brown@example.com",
+  "LoggedIn": false,
+  "Modules": [
+    "Module1",
+    "Module4"
+  ],
+  "Field": "Engineering"
+},
+{
+  "_id": {
+    "$oid": "66c9ea428f7b7d1df3eb1949"
+  },
+  "User_ID": 5,
+  "Name": "Diana",
+  "Surname": "Prince",
+  "Username": "diana.prince",
+  "Password": "password123",
+  "Role": "Lecturer",
+  "Email": "diana.prince@example.com",
+  "LoggedIn": true,
+  "Modules": [
+    "Module2"
+  ],
+  "Field": "Physics"
+},
+{
+  "_id": {
+    "$oid": "66c9ea428f7b7d1df3eb194a"
+  },
+  "User_ID": 6,
+  "Name": "Evan",
+  "Surname": "Davis",
+  "Username": "evan.davis",
+  "Password": "password123",
+  "Role": "Student",
+  "Email": "evan.davis@example.com",
+  "LoggedIn": false,
+  "Modules": [
+    "Module3",
+    "Module5"
+  ],
+  "Field": "Chemistry"
+},
+{
+  "_id": {
+    "$oid": "66c9ea428f7b7d1df3eb194b"
+  },
+  "User_ID": 7,
+  "Name": "Fiona",
+  "Surname": "Garcia",
+  "Username": "fiona.garcia",
+  "Password": "password123",
+  "Role": "Lecturer",
+  "Email": "fiona.garcia@example.com",
+  "LoggedIn": true,
+  "Modules": [
+    "Module1"
+  ],
+  "Field": "Biology"
+},
+{
+  "_id": {
+    "$oid": "66c9ea428f7b7d1df3eb194c"
+  },
+  "User_ID": 8,
+  "Name": "George",
+  "Surname": "Martin",
+  "Username": "george.martin",
+  "Password": "password123",
+  "Role": "Student",
+  "Email": "george.martin@example.com",
+  "LoggedIn": false,
+  "Modules": [
+    "Module4"
+  ],
+  "Field": "Literature"
+},
+{
+  "_id": {
+    "$oid": "66c9ea428f7b7d1df3eb194d"
+  },
+  "User_ID": 9,
+  "Name": "Hannah",
+  "Surname": "Baker",
+  "Username": "hannah.baker",
+  "Password": "password123",
+  "Role": "Lecturer",
+  "Email": "hannah.baker@example.com",
+  "LoggedIn": true,
+  "Modules": [
+    "Module5"
+  ],
+  "Field": "History"
+},
+{
+  "_id": {
+    "$oid": "66c9ea428f7b7d1df3eb194e"
+  },
+  "User_ID": 10,
+  "Name": "Ian",
+  "Surname": "Wright",
+  "Username": "ian.wright",
+  "Password": "password123",
+  "Role": "Student",
+  "Email": "ian.wright@example.com",
+  "LoggedIn": false,
+  "Modules": [
+    "Module2",
+    "Module3"
+  ],
+  "Field": "Economics"
+}]

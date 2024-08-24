@@ -1,0 +1,170 @@
+[{
+  "_id": {
+    "$oid": "66c9e9b68f7b7d1df3eb1943"
+  },
+  "Assignment_ID": 1,
+  "Title": "Assignment 1",
+  "Description": "This is a description of the assignment.",
+  "Marks": 100,
+  "Open_Date": {
+    "$date": "2024-08-24T00:00:00.000Z"
+  },
+  "Due_Date": {
+    "$date": "2024-09-01T00:00:00.000Z"
+  },
+  "Module_ID": 1,
+  "User_ID": 1
+},
+{
+  "_id": {
+    "$oid": "66c9ed1e8f7b7d1df3eb1976"
+  },
+  "Assignment_ID": 2,
+  "Title": "Biomechanics Analysis",
+  "Description": "Analyze the biomechanics of a specific human movement.",
+  "Marks": 90,
+  "Open_Date": {
+    "$date": "2024-09-01T00:00:00.000Z"
+  },
+  "Due_Date": {
+    "$date": "2024-09-10T00:00:00.000Z"
+  },
+  "Module_ID": 2,
+  "User_ID": 2
+},
+{
+  "_id": {
+    "$oid": "66c9ed1e8f7b7d1df3eb1977"
+  },
+  "Assignment_ID": 3,
+  "Title": "Nutrition and Performance",
+  "Description": "Discuss the role of nutrition in athletic performance.",
+  "Marks": 85,
+  "Open_Date": {
+    "$date": "2024-09-05T00:00:00.000Z"
+  },
+  "Due_Date": {
+    "$date": "2024-09-15T00:00:00.000Z"
+  },
+  "Module_ID": 3,
+  "User_ID": 3
+},
+{
+  "_id": {
+    "$oid": "66c9ed1e8f7b7d1df3eb1978"
+  },
+  "Assignment_ID": 4,
+  "Title": "Exercise Physiology",
+  "Description": "Examine the physiological responses to endurance training.",
+  "Marks": 95,
+  "Open_Date": {
+    "$date": "2024-09-10T00:00:00.000Z"
+  },
+  "Due_Date": {
+    "$date": "2024-09-20T00:00:00.000Z"
+  },
+  "Module_ID": 4,
+  "User_ID": 4
+},
+{
+  "_id": {
+    "$oid": "66c9ed1e8f7b7d1df3eb1979"
+  },
+  "Assignment_ID": 5,
+  "Title": "Sports Psychology",
+  "Description": "Evaluate the psychological factors affecting sports performance.",
+  "Marks": 88,
+  "Open_Date": {
+    "$date": "2024-09-12T00:00:00.000Z"
+  },
+  "Due_Date": {
+    "$date": "2024-09-22T00:00:00.000Z"
+  },
+  "Module_ID": 5,
+  "User_ID": 5
+},
+{
+  "_id": {
+    "$oid": "66c9ed1e8f7b7d1df3eb197a"
+  },
+  "Assignment_ID": 6,
+  "Title": "Rehabilitation Techniques",
+  "Description": "Design a rehabilitation program for a common sports injury.",
+  "Marks": 92,
+  "Open_Date": {
+    "$date": "2024-09-15T00:00:00.000Z"
+  },
+  "Due_Date": {
+    "$date": "2024-09-25T00:00:00.000Z"
+  },
+  "Module_ID": 6,
+  "User_ID": 6
+},
+{
+  "_id": {
+    "$oid": "66c9ed1e8f7b7d1df3eb197b"
+  },
+  "Assignment_ID": 7,
+  "Title": "Motor Learning",
+  "Description": "Explore the principles of motor learning in sports.",
+  "Marks": 90,
+  "Open_Date": {
+    "$date": "2024-09-18T00:00:00.000Z"
+  },
+  "Due_Date": {
+    "$date": "2024-09-28T00:00:00.000Z"
+  },
+  "Module_ID": 7,
+  "User_ID": 7
+},
+{
+  "_id": {
+    "$oid": "66c9ed1e8f7b7d1df3eb197c"
+  },
+  "Assignment_ID": 8,
+  "Title": "Strength and Conditioning",
+  "Description": "Develop a strength and conditioning program for athletes.",
+  "Marks": 94,
+  "Open_Date": {
+    "$date": "2024-09-20T00:00:00.000Z"
+  },
+  "Due_Date": {
+    "$date": "2024-09-30T00:00:00.000Z"
+  },
+  "Module_ID": 8,
+  "User_ID": 8
+},
+{
+  "_id": {
+    "$oid": "66c9ed1e8f7b7d1df3eb197d"
+  },
+  "Assignment_ID": 9,
+  "Title": "Kinesiology",
+  "Description": "Study the movement patterns of the human body.",
+  "Marks": 89,
+  "Open_Date": {
+    "$date": "2024-09-25T00:00:00.000Z"
+  },
+  "Due_Date": {
+    "$date": "2024-10-05T00:00:00.000Z"
+  },
+  "Module_ID": 9,
+  "User_ID": 9
+},
+{
+  "_id": {
+    "$oid": "66c9ed1e8f7b7d1df3eb197e"
+  },
+  "Assignment_ID": 10,
+  "Title": "Sports Biomechanics",
+  "Description": "Assess the mechanical aspects of sports movements.",
+  "Marks": 91,
+  "Open_Date": {
+    "$date": "2024-09-28T00:00:00.000Z"
+  },
+  "Due_Date": {
+    "$date": "2024-10-08T00:00:00.000Z"
+  },
+  "Module_ID": 10,
+  "User_ID": 10
+}]

@@ -1,0 +1,100 @@
+[{
+  "_id": {
+    "$oid": "66c9e6928f7b7d1df3eb1938"
+  },
+  "Feedback_ID": 1,
+  "Submission_ID": 1,
+  "Feedback_Text": "Good job on the assignment!",
+  "Marks": 85,
+  "User_ID": 1
+},
+{
+  "_id": {
+    "$oid": "66c9ec488f7b7d1df3eb196b"
+  },
+  "Feedback_ID": 2,
+  "Submission_ID": 2,
+  "Feedback_Text": "Great work on the video submission. Just a few areas to improve.",
+  "Marks": 85.5,
+  "User_ID": 2
+},
+{
+  "_id": {
+    "$oid": "66c9ec488f7b7d1df3eb196c"
+  },
+  "Feedback_ID": 3,
+  "Submission_ID": 3,
+  "Feedback_Text": "The demonstration was clear, but ensure your technique aligns with guidelines.",
+  "Marks": 78,
+  "User_ID": 3
+},
+{
+  "_id": {
+    "$oid": "66c9ec488f7b7d1df3eb196d"
+  },
+  "Feedback_ID": 4,
+  "Submission_ID": 4,
+  "Feedback_Text": "Excellent presentation and execution of the task.",
+  "Marks": 92,
+  "User_ID": 4
+},
+{
+  "_id": {
+    "$oid": "66c9ec488f7b7d1df3eb196e"
+  },
+  "Feedback_ID": 5,
+  "Submission_ID": 5,
+  "Feedback_Text": "Good attempt, but the video quality could be improved.",
+  "Marks": 72,
+  "User_ID": 5
+},
+{
+  "_id": {
+    "$oid": "66c9ec488f7b7d1df3eb196f"
+  },
+  "Feedback_ID": 6,
+  "Submission_ID": 6,
+  "Feedback_Text": "The content was solid, but the audio was hard to hear.",
+  "Marks": 80,
+  "User_ID": 6
+},
+{
+  "_id": {
+    "$oid": "66c9ec488f7b7d1df3eb1970"
+  },
+  "Feedback_ID": 7,
+  "Submission_ID": 7,
+  "Feedback_Text": "Excellent understanding of the concept shown.",
+  "Marks": 88,
+  "User_ID": 7
+},
+{
+  "_id": {
+    "$oid": "66c9ec488f7b7d1df3eb1971"
+  },
+  "Feedback_ID": 8,
+  "Submission_ID": 8,
+  "Feedback_Text": "Good effort, but more detail is needed in the explanation.",
+  "Marks": 76,
+  "User_ID": 8
+},
+{
+  "_id": {
+    "$oid": "66c9ec488f7b7d1df3eb1972"
+  },
+  "Feedback_ID": 9,
+  "Submission_ID": 9,
+  "Feedback_Text": "Well done! You've covered all the key points.",
+  "Marks": 90,
+  "User_ID": 9
+},
+{
+  "_id": {
+    "$oid": "66c9ec488f7b7d1df3eb1973"
+  },
+  "Feedback_ID": 10,
+  "Submission_ID": 10,
+  "Feedback_Text": "A strong submission with clear insights.",
+  "Marks": 87.5,
+  "User_ID": 10
+}]
