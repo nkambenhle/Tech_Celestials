@@ -1,18 +1,21 @@
-const { MongoClient } = require('mongodb');
+// config/db.js
+const mongoose = require('mongoose');
 
-let dbConnection;
+mongoose.set('debug', true);
 
-module.exports = {
-    connectToDb: (cb) => {
-        MongoClient.connect('mongodb://localhost:27017/')
-            .then((client) => {
-                dbConnection = client.db(); // Connect to the database
-                return cb(); // No error, so just call cb without arguments
-            })
-            .catch((err) => {
-                console.log(err); // Log the error
-                return cb(err); // Pass the error to the callback
-            });
-    },
-    getDb: () => dbConnection 
+const connectDB = async () => {
+    try {
+        await mongoose.connect('mongodb+srv://nkambenhle17zungu:AQnjaI8M0kGZzVyq@hms.ohajons.mongodb.net/?retryWrites=true&w=majority&appName=HMS', {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
+        console.log('MongoDB connected');
+    } catch (err) {
+        console.error(err.message);
+        process.exit(1);
+    }
 };
+
+
+module.exports = connectDB;
+
