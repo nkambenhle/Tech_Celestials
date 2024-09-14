@@ -19,6 +19,9 @@ app.use('/submissions', require('./routes/submissionRoutes'));
 app.use('/feedbacks', require('./routes/feedbackRoutes'));
 app.use('/modules', require('./routes/moduleRoutes'));
 
+const cors = require('cors');
+app.use(cors());
+
 // Setup Swagger
 setupSwagger(app);
 
@@ -27,3 +30,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
