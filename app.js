@@ -23,13 +23,14 @@ app.use('/feedbacks', require('./routes/feedbackRoutes'));
 app.use('/modules', require('./routes/moduleRoutes'));
 
 // Authentication Route
-app.use('/auth', require('./routes/authRoutes'));
+app.use('/authS', require('./routes/authStudentRoutes'));
+app.use('/authL', require('./routes/authLecturerRoutes'));
 
 // Setup Swagger
 setupSwagger(app);
 
 // Start server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
