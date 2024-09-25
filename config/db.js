@@ -2,18 +2,21 @@
 // config/db.js
 const mongoose = require('mongoose');
 
+mongoose.set('debug', true);
+
 const connectDB = async () => {
     try {
-        await mongoose.connect(process.env.MONGO_URI, {
+        await mongoose.connect('mongodb+srv://nkambenhle17zungu:AQnjaI8M0kGZzVyq@hms.ohajons.mongodb.net/?retryWrites=true&w=majority&appName=HMS', {
             useNewUrlParser: true,
             useUnifiedTopology: true
         });
-        console.log('MongoDB connected'); // Log success message
+        console.log('MongoDB connected');
     } catch (err) {
-        console.error(err.message); // Log error message
-        process.exit(1); // Exit the process with failure
+        console.error(err.message);
+        process.exit(1);
     }
 };
 
-module.exports = connectDB; // Export the function
+
+module.exports = connectDB;
 

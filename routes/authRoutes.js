@@ -4,7 +4,9 @@ const { check, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const router = express.Router();
-require('dotenv').config();
+
+// Hardcoded secret key
+const SECRET_KEY = 'techZungunk'; // Define the secret key
 
 // Register a new user
 router.post(
@@ -13,11 +15,10 @@ router.post(
         check('Username', 'Username is required').not().isEmpty(),
         check('Password', 'Password must be 6 or more characters').isLength({ min: 6 }),
         check('Email', 'Please include a valid email').isEmail(),
-        check('Role', 'Defualt role can only be student!').isIn([ 'student'])
-        
+        check('Role', 'Default role can only be student!').isIn(['student'])
     ],
     async (req, res) => {
-        const errors = validationResult(req); 
+        const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
@@ -57,13 +58,17 @@ router.post(
 
             jwt.sign(
                 payload,
-                process.env.JWT_SECRET,
+                SECRET_KEY, // Use hardcoded secret key
                 { expiresIn: '1h' },
                 (err, token) => {
                     if (err) throw err;
                     res.json({ token });
                 }
             );
+
+            user.LoggedIn = true;
+            await user.save();
+            
         } catch (err) {
             console.error(err.message);
             res.status(500).send('Server error');
@@ -108,7 +113,7 @@ router.post(
 
             jwt.sign(
                 payload,
-                process.env.JWT_SECRET,
+                SECRET_KEY, // Use hardcoded secret key
                 { expiresIn: '1h' },
                 (err, token) => {
                     if (err) throw err;
@@ -124,6 +129,10 @@ router.post(
         }
     }
 );
+
+router.get('/test', (req, res) => {
+    res.send('Auth route works');
+});
 
 // Logout a user
 router.post('/logout', async (req, res) => {
@@ -146,6 +155,3 @@ router.post('/logout', async (req, res) => {
 });
 
 module.exports = router;
-
-
-
