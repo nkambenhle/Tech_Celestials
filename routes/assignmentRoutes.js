@@ -26,7 +26,7 @@ const isLecturer = async (req, res, next) => {
 // GET all assignments
 router.get('/', async (req, res) => {
     try {
-        const assignments = await Assignment.find();
+        const assignments = await Assignment.find().populate('Module_ID'); // Populate Module_ID
         res.json(assignments);
     } catch (err) {
         res.status(500).json({ message: err.message });
@@ -36,7 +36,7 @@ router.get('/', async (req, res) => {
 // GET assignment by ID
 router.get('/:id', async (req, res) => {
     try {
-        const assignment = await Assignment.findById(req.params.id);
+        const assignment = await Assignment.findById(req.params.id).populate('Module_ID'); // Populate Module_ID
         if (assignment) res.json(assignment);
         else res.status(404).json({ message: 'Assignment not found' });
     } catch (err) {
@@ -71,7 +71,7 @@ router.post('/', isLecturer, async (req, res) => {
 });
 
 // PATCH update an assignment (Only lecturers)
-router.patch('/:id', [isLecturer], async (req, res) => {
+router.patch('/:id', isLecturer, async (req, res) => {
     try {
         const assignment = await Assignment.findByIdAndUpdate(req.params.id, req.body, { new: true });
         if (assignment) {
@@ -85,7 +85,7 @@ router.patch('/:id', [isLecturer], async (req, res) => {
 });
 
 // DELETE an assignment (Only lecturers)
-router.delete('/:id', [isLecturer], async (req, res) => {
+router.delete('/:id', isLecturer, async (req, res) => {
     try {
         const result = await Assignment.findByIdAndDelete(req.params.id);
         if (result) {
