@@ -1,175 +1,155 @@
-[{
-  "_id": {
-    "$oid": "66c9e5768f7b7d1df3eb1931"
-  },
-  "User_ID": 1,
-  "Name": "John",
-  "Surname": "Doe",
-  "Username": "johndoe",
-  "Password": "hashed_password",
-  "Role": "Student",
-  "Email": "john.doe@example.com",
-  "LoggedIn": false,
-  "Modules": [
-    "Module1",
-    "Module2"
-  ],
-  "Field": "SpecificField"
-},
-{
-  "_id": {
-    "$oid": "66c9ea428f7b7d1df3eb1946"
-  },
-  "User_ID": 2,
-  "Name": "Alice",
-  "Surname": "Smith",
-  "Username": "alice.smith",
-  "Password": "password123",
-  "Role": "Student",
-  "Email": "alice.smith@example.com",
-  "LoggedIn": false,
-  "Modules": [
-    "Module1",
-    "Module2"
-  ],
-  "Field": "Computer Science"
-},
-{
-  "_id": {
-    "$oid": "66c9ea428f7b7d1df3eb1947"
-  },
-  "User_ID": 3,
-  "Name": "Bob",
-  "Surname": "Johnson",
-  "Username": "bob.johnson",
-  "Password": "password123",
-  "Role": "Lecturer",
-  "Email": "bob.johnson@example.com",
-  "LoggedIn": true,
-  "Modules": [
-    "Module3"
-  ],
-  "Field": "Mathematics"
-},
-{
-  "_id": {
-    "$oid": "66c9ea428f7b7d1df3eb1948"
-  },
-  "User_ID": 4,
-  "Name": "Charlie",
-  "Surname": "Brown",
-  "Username": "charlie.brown",
-  "Password": "password123",
-  "Role": "Student",
-  "Email": "charlie.brown@example.com",
-  "LoggedIn": false,
-  "Modules": [
-    "Module1",
-    "Module4"
-  ],
-  "Field": "Engineering"
-},
-{
-  "_id": {
-    "$oid": "66c9ea428f7b7d1df3eb1949"
-  },
-  "User_ID": 5,
-  "Name": "Diana",
-  "Surname": "Prince",
-  "Username": "diana.prince",
-  "Password": "password123",
-  "Role": "Lecturer",
-  "Email": "diana.prince@example.com",
-  "LoggedIn": true,
-  "Modules": [
-    "Module2"
-  ],
-  "Field": "Physics"
-},
-{
-  "_id": {
-    "$oid": "66c9ea428f7b7d1df3eb194a"
-  },
-  "User_ID": 6,
-  "Name": "Evan",
-  "Surname": "Davis",
-  "Username": "evan.davis",
-  "Password": "password123",
-  "Role": "Student",
-  "Email": "evan.davis@example.com",
-  "LoggedIn": false,
-  "Modules": [
-    "Module3",
-    "Module5"
-  ],
-  "Field": "Chemistry"
-},
-{
-  "_id": {
-    "$oid": "66c9ea428f7b7d1df3eb194b"
-  },
-  "User_ID": 7,
-  "Name": "Fiona",
-  "Surname": "Garcia",
-  "Username": "fiona.garcia",
-  "Password": "password123",
-  "Role": "Lecturer",
-  "Email": "fiona.garcia@example.com",
-  "LoggedIn": true,
-  "Modules": [
-    "Module1"
-  ],
-  "Field": "Biology"
-},
-{
-  "_id": {
-    "$oid": "66c9ea428f7b7d1df3eb194c"
-  },
-  "User_ID": 8,
-  "Name": "George",
-  "Surname": "Martin",
-  "Username": "george.martin",
-  "Password": "password123",
-  "Role": "Student",
-  "Email": "george.martin@example.com",
-  "LoggedIn": false,
-  "Modules": [
-    "Module4"
-  ],
-  "Field": "Literature"
-},
-{
-  "_id": {
-    "$oid": "66c9ea428f7b7d1df3eb194d"
-  },
-  "User_ID": 9,
-  "Name": "Hannah",
-  "Surname": "Baker",
-  "Username": "hannah.baker",
-  "Password": "password123",
-  "Role": "Lecturer",
-  "Email": "hannah.baker@example.com",
-  "LoggedIn": true,
-  "Modules": [
-    "Module5"
-  ],
-  "Field": "History"
-},
-{
-  "_id": {
-    "$oid": "66c9ea428f7b7d1df3eb194e"
-  },
-  "User_ID": 10,
-  "Name": "Ian",
-  "Surname": "Wright",
-  "Username": "ian.wright",
-  "Password": "password123",
-  "Role": "Student",
-  "Email": "ian.wright@example.com",
-  "LoggedIn": false,
-  "Modules": [
-    "Module2",
-    "Module3"
-  ],
-  "Field": "Economics"
-}]
+[
+    {
+        "_id": "66f13fab81585269acc3bf5c",
+        "User_ID": "60b620d3-524d-4c11-969d-678b8ebc438f",
+        "Name": "Tshwanelo",
+        "Surname": "Moeng",
+        "Username": "Tshwanelo",
+        "Password": "$argon2id$v=19$m=65536,t=3,p=4$XPFUiqRnI+7+43WFgX7UWA$wJvZzBK35h8M7ShvhF6ndpvPmV3rO5PdNM43YBDJqbI",
+        "Role": "admin",
+        "Email": "tshwanee@gmail.com",
+        "LoggedIn": false,
+        "Modules": [
+            "",
+            ""
+        ],
+        "Field": "",
+        "__v": 0
+    },
+    {
+        "_id": "66f1448d79e6cb725102f68f",
+        "User_ID": "6f99ece6-a88e-41c6-949a-c9bb5fd20601",
+        "Name": "Fred",
+        "Surname": "Moeng",
+        "Username": "Fred",
+        "Password": "$argon2id$v=19$m=65536,t=3,p=4$biaAXtxy0A0tbv88jP4eBg$AG/lHSclIi7H7G4ecYzaL8OASL1IDP9dJgfNAK3gfdo",
+        "Role": "lecturer",
+        "Email": "tshw@gmail.com.com",
+        "LoggedIn": false,
+        "Modules": [
+            "Cmpg325",
+            "Cmpg313"
+        ],
+        "Field": "Computer Science",
+        "__v": 0
+    },
+    {
+        "_id": "66f3e13a474c2f265de1cd9c",
+        "User_ID": "8d453b45-77d5-4002-9793-dc207d77d4be",
+        "Name": "Messi",
+        "Surname": "Dasantos",
+        "Username": "Messi",
+        "Password": "$argon2id$v=19$m=65536,t=3,p=4$WphrxIEvA6EzFntDCMwE2w$hKbYcKj+SrsSN50Rh0Dkx9xqQBqQ0I+diksQfm1UHfY",
+        "Role": "student",
+        "Email": "edd@gmail.com",
+        "LoggedIn": false,
+        "Modules": [
+            "Cmpg311",
+            "Cmpg315"
+        ],
+        "Field": "Information Technology",
+        "__v": 0
+    },
+    {
+        "_id": "66f3f76f0ba42dc532400647",
+        "User_ID": "372b4b1d-4498-4a6f-91b0-7528f4c9396b",
+        "Name": "Nkanmbenhle",
+        "Surname": "Zungu",
+        "Username": "Zungu",
+        "Password": "$argon2id$v=19$m=65536,t=3,p=4$VnYCRv5xIhd1yLgLyZx9cw$GMYOAcF9ZmBWhQxWdltccHljkccDbIR7vHxVtVHw9zg",
+        "Role": "student",
+        "Email": "zungu@gmail.com",
+        "LoggedIn": false,
+        "Modules": [
+            "Cmpg311",
+            "Cmpg315"
+        ],
+        "Field": "Information Technology",
+        "__v": 0
+    },
+    {
+        "_id": "66f3f7c20ba42dc53240064b",
+        "User_ID": "d26e2231-2667-4e99-af4b-4894b3cdab70",
+        "Name": "Mluleki",
+        "Surname": "Zungu",
+        "Username": "Mluleki",
+        "Password": "$argon2id$v=19$m=65536,t=3,p=4$8vU5I3L5v+wokC6WINzX/g$LodBv6RkHJPlU051vn85t6cK3c48J2EodvCo1vOJ9xo",
+        "Role": "student",
+        "Email": "mluleki@gmail.com",
+        "LoggedIn": true,
+        "Modules": [
+            "Cmpg311",
+            "Cmpg315"
+        ],
+        "Field": "Information Technology",
+        "__v": 0
+    },
+    {
+        "_id": "66f3fe9f09818c995e0af3f5",
+        "User_ID": "632450b3-481b-4c68-a876-4c39341affcb",
+        "Name": "cleochivasa",
+        "Surname": "cleochivasa",
+        "Username": "cleochivasa",
+        "Password": "$argon2id$v=19$m=65536,t=3,p=4$EDm8+Mwnj7aCKqCfORkmug$Cl24q5fRetQhsVGmNRWCFNdI8UVR8LY35nJ1micL01g",
+        "Role": "lecturer",
+        "Email": "cleochivasa@gmail.com",
+        "LoggedIn": true,
+        "Modules": [
+            "Cmpg311",
+            "Cmpg315"
+        ],
+        "Field": "Information Technology",
+        "__v": 0
+    },
+    {
+        "_id": "66f3ff4f09818c995e0af3f9",
+        "User_ID": "85bd2440-3206-4303-b7a5-83adc689f5fb",
+        "Name": "FatimaMzee",
+        "Surname": "FatimaMzee",
+        "Username": "FatimaMzee",
+        "Password": "$argon2id$v=19$m=65536,t=3,p=4$m4AfVeTPxU1ondm0sRaCag$dkYwaFQx8ohNKTEZOwYP4MbeeKQ7YkdYuBTVCf0AJyU",
+        "Role": "student",
+        "Email": "FatimaMzee@gmail.com",
+        "LoggedIn": false,
+        "Modules": [
+            "Cmpg311",
+            "Cmpg315"
+        ],
+        "Field": "Information Technology",
+        "__v": 0
+    },
+    {
+        "_id": "66f412d05cf25c6670f6e330",
+        "User_ID": "8ff79703-16fa-432e-a94b-0de30fe1e864",
+        "Name": "Nkosinathi",
+        "Surname": "Nkosinathi",
+        "Username": "Nkosinathi",
+        "Password": "$argon2id$v=19$m=65536,t=3,p=4$Pj0g2mvOIqA0inbUvrzMVg$RXeFxNN1CfPvqvYgfKXdcqHpjR+NP6QPQadDDxlXAPc",
+        "Role": "lecturer",
+        "Email": "Nkosinathi@gmail.com",
+        "LoggedIn": true,
+        "Modules": [
+            "Cmpg311",
+            "Cmpg315"
+        ],
+        "Field": "Information Technology",
+        "__v": 0
+    },
+    {
+        "_id": "66f413185cf25c6670f6e334",
+        "User_ID": "7fd52d2d-edbc-4915-8752-7b8c048407ad",
+        "Name": "Pearlican",
+        "Surname": "Pearlican",
+        "Username": "Pearlican",
+        "Password": "$argon2id$v=19$m=65536,t=3,p=4$N71fW9XSiEQqeGRk9rdyWA$rdDnKTwbFPZENtm94RZZ688RkyywXwt4/uwBka3G/x0",
+        "Role": "student",
+        "Email": "Pearlican@gmail.com",
+        "LoggedIn": true,
+        "Modules": [
+            "Cmpg311",
+            "Cmpg315"
+        ],
+        "Field": "Information Technology",
+        "__v": 0
+    }
+]
