@@ -5,7 +5,7 @@ const Feedback = require('../models/feedback');
 // GET all feedbacks
 router.get('/', async (req, res) => {
     try {
-        const feedbacks = await Feedback.find();
+        const feedbacks = await Feedback.find().populate('Submission_ID');
         res.json(feedbacks);
     } catch (err) {
         res.status(500).json({ message: err.message });
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 // GET feedback by ID
 router.get('/:id', async (req, res) => {
     try {
-        const feedback = await Feedback.findById(req.params.id);
+        const feedback = await Feedback.findById(req.params.id).populate('Submission_ID');
         if (feedback) res.json(feedback);
         else res.status(404).json({ message: 'Feedback not found' });
     } catch (err) {
@@ -25,7 +25,12 @@ router.get('/:id', async (req, res) => {
 
 // POST create a new feedback
 router.post('/', async (req, res) => {
-    const feedback = new Feedback(req.body);
+    const feedback = new Feedback({
+        Submission_ID: req.body.Submission_ID,
+        Feedback_Text: req.body.Feedback_Text,
+        Marks: req.body.Marks,
+    });
+
     try {
         const newFeedback = await feedback.save();
         res.status(201).json(newFeedback);
@@ -37,7 +42,7 @@ router.post('/', async (req, res) => {
 // PATCH update a feedback
 router.patch('/:id', async (req, res) => {
     try {
-        const feedback = await Feedback.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const feedback = await Feedback.findByIdAndUpdate(req.params.id, req.body, { new: true }).populate('Submission_ID');
         if (feedback) res.json(feedback);
         else res.status(404).json({ message: 'Feedback not found' });
     } catch (err) {
