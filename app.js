@@ -6,6 +6,7 @@ const userRoutes = require('./routes/userRoutes'); // Import userRoutes after ex
 const bodyParser = require('body-parser');
 const connectDB = require('./config/db');
 const setupSwagger = require('./swagger');
+const submissionRoutes = require('./routes/submissionRoutes');
 
 const app = express();
 
@@ -30,7 +31,7 @@ app.use('/authL', require('./routes/authLecturerRoutes'));
 setupSwagger(app);
 
 // Start server
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
