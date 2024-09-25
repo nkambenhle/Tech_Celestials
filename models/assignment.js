@@ -1,4 +1,3 @@
-//This is another idea of doing it
 const mongoose = require('mongoose');
 
 const AssignmentSchema = new mongoose.Schema({
@@ -8,7 +7,7 @@ const AssignmentSchema = new mongoose.Schema({
     Marks: Number,
     Open_Date: Date,
     Due_Date: Date,
-    Module_ID: { type: mongoose.Schema.Types.ObjectId, ref: 'Module' } // References Module collection in mongodb
+    Module_ID: { type: mongoose.Schema.Types.ObjectId, ref: 'Module', required: true } // References Module collection in mongodb
     
 });
 
