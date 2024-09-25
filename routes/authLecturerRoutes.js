@@ -1,4 +1,4 @@
-// routes/authRoutes.js
+// routes/authLecturerRoutes.js
 const express = require('express');
 const { check, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
@@ -8,14 +8,14 @@ const router = express.Router();
 // Hardcoded secret key
 const SECRET_KEY = 'techZungunk'; // Define the secret key
 
-// Register a new user
+// Register a new lecturer
 router.post(
     '/register',
     [
         check('Username', 'Username is required').not().isEmpty(),
         check('Password', 'Password must be 6 or more characters').isLength({ min: 6 }),
         check('Email', 'Please include a valid email').isEmail(),
-        check('Role', 'Default role can only be student!').isIn(['student'])
+        check('Role', 'Default role can only be lecturer!').isIn(['lecturer'])
     ],
     async (req, res) => {
         const errors = validationResult(req);
