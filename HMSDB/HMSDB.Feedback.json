@@ -1,7 +1,44 @@
-{
-  
-  "Submission_ID": "66f4757ff7f1195c25d8337f"
-  "Feedback_Text": "Great work!",
-   "Marks": 18,
-  
-}
+[
+    {
+        "_id": "66f55f1729e31f4f84804fe0",
+        "Submission_ID": {
+            "_id": "66f4181451fe93943e619289",
+            "Assignment_ID": "66ee7d54259b4a61a403fded",
+            "User_ID": "66f3e13a474c2f265de1cd9c",
+            "Video": "video.mp4",
+            "Date": "2024-09-25T14:03:00.371Z",
+            "__v": 0
+        },
+        "Feedback_Text": "Great work!",
+        "Marks": 18,
+        "__v": 0
+    },
+    {
+        "_id": "66f55f8129e31f4f84804fe5",
+        "Submission_ID": {
+            "_id": "66f4757ff7f1195c25d8337f",
+            "Assignment_ID": "66ee7d54259b4a61a403fded",
+            "User_ID": "66f3f76f0ba42dc532400647",
+            "Video": "video.mp4",
+            "Date": "2024-09-25T20:41:35.041Z",
+            "__v": 0
+        },
+        "Feedback_Text": "Great work, but be more descriptive.",
+        "Marks": 12,
+        "__v": 0
+    },
+    {
+        "_id": "66f55faf29e31f4f84804fe7",
+        "Submission_ID": {
+            "_id": "66f477b9be677ce8472641f6",
+            "Assignment_ID": "66ee7d54259b4a61a403fded",
+            "User_ID": "66f413185cf25c6670f6e334",
+            "Video": "https://techzungunkstorage.blob.core.windows.net/videos/1727297465339-dbde531b707146aca0d5e912ec6ea6b8.mp4",
+            "Date": "2024-09-25T20:51:05.388Z",
+            "__v": 0
+        },
+        "Feedback_Text": "Great work !",
+        "Marks": 19,
+        "__v": 0
+    }
+]
