@@ -23,7 +23,7 @@ Web Application (for Lecturers)
 - View video submissions from students.
 - Stream or download videos for review.
 - Provide feedback via text comments.
-- Assign grades to videos.
+- Assign grades/marks to videos.
 
 Mobile Application (for Students)
 - Secure login for students.
@@ -35,7 +35,6 @@ Mobile Application (for Students)
 General
 - Role-based access for Admin, Lecturer, and Student.
 - Secure storage of video files with encryption and compression.
-- Real-time feedback using WebSockets for instant communication.
 - Adaptive streaming with variable bitrate support for users with weak internet connections.
 
 ---
@@ -47,8 +46,6 @@ Backend
 - MongoDB for storing user data, assignments, and feedback.
 - ffmpeg for video compression and format conversion.
 - Azure for video storage and streaming.
-- WebSocket for real-time feedback.
-
 
 Prerequisites
 - Node.js (v14 or higher)
@@ -70,7 +67,7 @@ Backend Setup
     ```bash
      MONGO_URI=mongodb+srv://nkambenhle17zungu:AQnjaI8M0kGZzVyq@hms.ohajons.mongodb.net/?retryWrites=true&w=majority&appName=HMS
 
-JWT_SECRET=techZungunk
+    JWT_SECRET=techZungunk
 
     ```
 
@@ -94,18 +91,18 @@ human-movement-video-feedback/
 API Endpoints
 
 Authentication
-- `POST http://localhost:3000/auth/login - Authenticate users based on role (Admin, Lecturer, Student).
+- `POST http://localhost:3000/auth/login` - Authenticate users based on role (Admin, Lecturer, Student).
 
 Video Submissions
 - `POST http://localhost:3000/submissions` - Upload a new video.
 
 Feedback
-- `POST /api/feedback/:videoId` - Provide feedback and assign marks to a video (Lecturers only).
-- `GET /api/feedback/:videoId` - Retrieve feedback for a specific video (Students and Lecturers).
+- `POST http://localhost:3000/feedbacks` - Provide feedback and assign marks to a video (Lecturers only).
+- `GET http://localhost:3000/feedacks` - Retrieve feedback for a specific video that was under a submission. (Students and Lecturers).
 
 Assignments
-- `POST /api/assignments` - Create a new assignment (Lecturers/Admins only).
-- `GET /api/assignments` - Get all assignments.
+- `POST http://localhost:3000/assignments` - Create a new assignment (Lecturers/Admins only).
+- `GET http://localhost:3000/assignments` - Get all assignments.
 
 ---
 
