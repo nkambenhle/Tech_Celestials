@@ -62,10 +62,10 @@ Backend Setup
 
 1. Clone the repository:
 2. Install dependencies:
-    ```bash
-    cd backend
+    
+    cd OneDrive\Documents\projects
     npm install
-    ```
+    
 3. Create an `.env` file in the `backend` directory and add the following variables:
     ```bash
      MONGO_URI=mongodb+srv://nkambenhle17zungu:AQnjaI8M0kGZzVyq@hms.ohajons.mongodb.net/?retryWrites=true&w=majority&appName=HMS
