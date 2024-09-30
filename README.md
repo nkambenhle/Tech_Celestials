@@ -89,20 +89,24 @@ human-movement-video-feedback/
 ---
 
 API Endpoints
-
+Online Hosting: https://hms-ehgyh4f5hhavg5at.southafricanorth-01.azurewebsites.net/
 Authentication
 - `POST http://localhost:3000/auth/login` - Authenticate users based on role (Admin, Lecturer, Student).
+- Online Hosting: https://hms-ehgyh4f5hhavg5at.southafricanorth-01.azurewebsites.net/login
 
 Video Submissions
 - `POST http://localhost:3000/submissions` - Upload a new video.
+- Online Hosting: https://hms-ehgyh4f5hhavg5at.southafricanorth-01.azurewebsites.net/submissions
 
 Feedback
 - `POST http://localhost:3000/feedbacks` - Provide feedback and assign marks to a video (Lecturers only).
 - `GET http://localhost:3000/feedacks` - Retrieve feedback for a specific video that was under a submission. (Students and Lecturers).
+- Online Hosting: https://hms-ehgyh4f5hhavg5at.southafricanorth-01.azurewebsites.net/feedacks
 
 Assignments
 - `POST http://localhost:3000/assignments` - Create a new assignment (Lecturers/Admins only).
 - `GET http://localhost:3000/assignments` - Get all assignments.
+- Online Hosting: https://hms-ehgyh4f5hhavg5at.southafricanorth-01.azurewebsites.net/assignments
 
 ---
 
