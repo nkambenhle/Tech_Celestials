@@ -15,7 +15,7 @@ router.post(
         check('Username', 'Username is required').not().isEmpty(),
         check('Password', 'Password must be 6 or more characters').isLength({ min: 6 }),
         check('Email', 'Please include a valid email').isEmail(),
-        check('Role', 'Default role can only be student!').isIn(['student'])
+      
     ],
     async (req, res) => {
         const errors = validationResult(req);
