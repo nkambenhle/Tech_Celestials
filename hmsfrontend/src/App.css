@@ -1,3 +1,11 @@
+:root {
+  --medium-slate-blue: #706EF0;
+  --lavender-web: #D4DEFB;
+  --jordy-blue: #B3CDFE;
+  --alice-blue: #EBF1FE;
+  --glaucous: #7180EA;
+}
+
 .App {
   text-align: center;
 }
