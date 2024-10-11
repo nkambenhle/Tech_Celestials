@@ -5,7 +5,7 @@ import AssignmentsPage from './pages/AssignmentsPage';
 import UploadPage from './pages/UploadPage';
 import FeedbackPage from './pages/FeedbackPage';
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Routes>
@@ -16,6 +16,6 @@ function App() {
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;

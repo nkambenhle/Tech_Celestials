@@ -1,37 +1,116 @@
-.home-container {
-    text-align: center;
-    padding: 20px;
+/* Color Palette */
+:root {
+    --medium-slate-blue: #706EF0ff;
+    --lavender-web: #D4DEFBff;
+    --jordy-blue: #B3CDFEff;
+    --alice-blue: #EBF1FEff;
+    --glaucous: #7180EAff;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
     background-color: var(--alice-blue);
-    color: var(--medium-slate-blue);
-    min-height: 100vh;
-}
-
-h1 {
-    color: var(--glaucous);
-    font-size: 2.5rem;
-}
-
-p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.home-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.home-button {
+    color: #333;
+  }
+  
+  .navbar {
     background-color: var(--medium-slate-blue);
-    color: var(--alice-blue);
-    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    color: white;
+  }
+  
+  .navbar-logo {
+    font-size: 1.5em;
+  }
+  
+  .navbar-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar-links li a {
+    color: white;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-}
-
-.home-button:hover {
+    font-weight: bold;
+  }
+  
+  .navbar-links li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    background: var(--gradient-top-right);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+  
+  .hero-button {
     background-color: var(--glaucous);
-}
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .hero-button:hover {
+    background-color: var(--medium-slate-blue);
+  }
+  
+  /* Features Section */
+  .features-section {
+    padding: 50px 20px;
+    background-color: var(--lavender-web);
+    text-align: center;
+  }
+  
+  .features-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .feature-item {
+    background-color: var(--jordy-blue);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+  }
+  
+  .feature-item h3 {
+    margin-top: 0;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: var(--medium-slate-blue);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
