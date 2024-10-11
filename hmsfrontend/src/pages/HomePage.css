@@ -1,0 +1,37 @@
+.home-container {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--alice-blue);
+    color: var(--medium-slate-blue);
+    min-height: 100vh;
+}
+
+h1 {
+    color: var(--glaucous);
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.home-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.home-button {
+    background-color: var(--medium-slate-blue);
+    color: var(--alice-blue);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: var(--glaucous);
+}

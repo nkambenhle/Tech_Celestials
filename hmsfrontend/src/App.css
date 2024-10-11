@@ -4,6 +4,8 @@
   --jordy-blue: #B3CDFE;
   --alice-blue: #EBF1FE;
   --glaucous: #7180EA;
+
+  --gradient: linear-gradient(90deg, var(--medium-slate-blue), var(--lavender-web), var(--jordy-blue), var(--alice-blue), var(--glaucous));
 }
 
 .App {
