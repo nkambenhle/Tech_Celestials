@@ -1,13 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link for navigation
 import './HomePage.css'; 
+import logo from '../images/NWU_Logo.png'; // Import the logo image
+import heroImage from '../images/Hero03_11zon.jpg';  // Import the hero image
 
 const HomePage = () => {
   return (
     <div className="homepage">
       {/* Navbar */}
       <nav className="navbar">
-        <div className="navbar-logo">HMS Feedback System</div>
+      <div className="navbar-logo">
+          <Link to="/">
+            <img src={logo} alt="HMS Feedback System Logo" className="navbar-logo-img" />
+          </Link>
+      </div>
         <ul className="navbar-links">
           <li><Link to="/">Home</Link></li>
           <li><Link to="/assignments">Assignments</Link></li>
@@ -18,7 +24,7 @@ const HomePage = () => {
 
       {/* Rest of the homepage */}
       {/* Hero Section */}
-      <section className="hero-section">
+      <section className="hero-section" style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="hero-content">
           <h1>Welcome to the HMS Feedback System</h1>
           <p>Delivering faster feedback to students through video assignments.</p>

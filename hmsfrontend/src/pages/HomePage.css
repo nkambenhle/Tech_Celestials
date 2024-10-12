@@ -14,61 +14,68 @@
     color: #333;
   }
   
-  .navbar {
-    background-color: var(--medium-slate-blue);
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-    color: white;
+  .navbar-logo-img {
+    height: 50px; /* Adjust this to your desired logo size */
+    width: auto;
   }
   
-  .navbar-logo {
-    font-size: 1.5em;
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
   }
   
   .navbar-links {
-    list-style-type: none;
+    list-style: none;
     display: flex;
     gap: 20px;
   }
   
+  .navbar-links li {
+    font-size: 1.2rem;
+  }
+  
   .navbar-links li a {
-    color: white;
     text-decoration: none;
-    font-weight: bold;
+    color: #000; /* Adjust the color */
   }
   
   .navbar-links li a:hover {
-    text-decoration: underline;
+    color: #706EF0ff; /* Change this to your desired hover color */
   }
+  
   
   /* Hero Section */
-  .hero-section {
-    background: var(--gradient-top-right);
-    color: white;
-    padding: 100px 20px;
-    text-align: center;
-  }
-  
-  .hero-content h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-  }
-  
-  .hero-content p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-  }
-  
-  .hero-button {
-    background-color: var(--glaucous);
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    font-size: 1.2em;
-    cursor: pointer;
-    border-radius: 5px;
-  }
+
+    .hero-section {
+      background-size: cover;
+      background-position: center;
+      height: 500px; /* Adjust this height as needed */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+    
+    .hero-content {
+      background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent overlay */
+      padding: 20px;
+      border-radius: 10px;
+    }
+    
+    .hero-button {
+      padding: 10px 20px;
+      background-color: var(--medium-slate-blue); /* Use your color palette */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+    
   
   .hero-button:hover {
     background-color: var(--medium-slate-blue);
