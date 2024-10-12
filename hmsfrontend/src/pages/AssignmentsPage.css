@@ -1,0 +1,68 @@
+
+.upload-page-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--alice-blue);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: var(--medium-slate-blue);
+    text-align: center;
+}
+
+.assignment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.assignment-form label {
+    display: flex;
+    flex-direction: column;
+    color: var(--glaucous);
+    font-weight: bold;
+}
+
+.assignment-form input,
+.assignment-form textarea {
+    padding: 10px;
+    border: 1px solid var(--jordy-blue);
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.assignment-form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.submit-button {
+    background-color: var(--medium-slate-blue);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: var(--glaucous);
+}
+
+.navigation-links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.nav-link {
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--medium-slate-blue);
+    font-weight: bold;
+}
