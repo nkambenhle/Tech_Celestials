@@ -5,16 +5,16 @@ const Assignment = require('../models/assignment');
 const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 
-// Middleware to verify if the user is a lecturer
-const isLecturer = async (req, res, next) => {
+// Middleware to verify if the user is a lecturer or admin
+const isLecturerOrAdmin = async (req, res, next) => {
     const token = req.headers['x-auth-token'];
     if (!token) return res.status(401).json({ msg: 'No token, authorization denied' });
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const user = await User.findById(decoded.user.id);
-        if (!user || user.Role !== 'lecturer') {
-            return res.status(403).json({ msg: 'Access denied. Only lecturers can perform this action.' });
+        if (!user || (user.Role !== 'lecturer' && user.Role !== 'admin')) {
+            return res.status(403).json({ msg: 'Access denied. Only lecturers or admins can perform this action.' });
         }
         req.user = user; // Store the user info in the request
         next();
@@ -22,6 +22,16 @@ const isLecturer = async (req, res, next) => {
         res.status(401).json({ msg: 'Token is not valid' });
     }
 };
+
+// GET assignments created by the logged-in lecturer
+router.get('/my-assignments', isLecturerOrAdmin, async (req, res) => {
+    try {
+        const assignments = await Assignment.find({ createdBy: req.user._id }).populate('Module_ID'); // Populate Module_ID
+        res.json(assignments);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
 
 // GET all assignments
 router.get('/', async (req, res) => {
@@ -44,8 +54,8 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// POST create a new assignment (Lecturers only)
-router.post('/', isLecturer, async (req, res) => {
+// POST create a new assignment (Lecturers or Admins only)
+router.post('/', isLecturerOrAdmin, async (req, res) => {
     const { Title, Description, Marks, Open_Date, Due_Date, Module_ID } = req.body;
 
     // Ensure that Module_ID is a valid ObjectId
@@ -60,6 +70,7 @@ router.post('/', isLecturer, async (req, res) => {
         Open_Date,
         Due_Date,
         Module_ID,
+        createdBy: req.user._id // Set createdBy to the ID of the authenticated user
     });
 
     try {
@@ -70,8 +81,8 @@ router.post('/', isLecturer, async (req, res) => {
     }
 });
 
-// PATCH update an assignment (Only lecturers)
-router.patch('/:id', isLecturer, async (req, res) => {
+// PATCH update an assignment (Only lecturers or admins)
+router.patch('/:id', isLecturerOrAdmin, async (req, res) => {
     try {
         const assignment = await Assignment.findByIdAndUpdate(req.params.id, req.body, { new: true });
         if (assignment) {
@@ -84,8 +95,8 @@ router.patch('/:id', isLecturer, async (req, res) => {
     }
 });
 
-// DELETE an assignment (Only lecturers)
-router.delete('/:id', isLecturer, async (req, res) => {
+// DELETE an assignment (Only lecturers or admins)
+router.delete('/:id', isLecturerOrAdmin, async (req, res) => {
     try {
         const result = await Assignment.findByIdAndDelete(req.params.id);
         if (result) {
@@ -97,5 +108,7 @@ router.delete('/:id', isLecturer, async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 });
+
+
 
 module.exports = router;
