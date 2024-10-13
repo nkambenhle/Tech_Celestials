@@ -5,6 +5,7 @@ import logo from '../images/NWU_Logo.png'; // Import the logo image
 import heroImage from '../images/Hero03_11zon.jpg';  // Import the hero image
 
 const HomePage = () => {
+
   return (
     <div className="homepage">
       {/* Navbar */}
@@ -28,7 +29,9 @@ const HomePage = () => {
         <div className="hero-content">
           <h1>Welcome to the HMS Feedback System</h1>
           <p>Delivering faster feedback to students through video assignments.</p>
+          <Link to="/login"><Link></Link>
           <button className="hero-button">Get Started</button>
+          </Link>
         </div>
       </section>
 

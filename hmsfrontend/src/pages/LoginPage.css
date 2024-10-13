@@ -1,0 +1,125 @@
+/* Navbar styles */
+.navbar-logo-img {
+    height: 50px; /* Adjust this to your desired logo size */
+    width: auto;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar-links li {
+    font-size: 1.2rem;
+  }
+  
+  .navbar-links li a {
+    text-decoration: none;
+    color: #000; /* Adjust the color */
+  }
+  
+  .navbar-links li a:hover {
+    color: #706EF0ff; /* Change this to your desired hover color */
+  }
+  
+  /* Footer styles */
+  .footer {
+    background-color: var(--medium-slate-blue);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Ensure content does not overlap the fixed navbar and footer */
+  .login-page, .homepage {
+    padding-top: 60px; /* Height of the navbar */
+    padding-bottom: 40px; /* Height of the footer */
+  }
+  
+  /* Login container styles */
+  .login-container {
+    max-width: 400px;
+    margin: 80px auto; /* Centered content with some top margin */
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form styles */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input[type="text"], input[type="password"], input[type="email"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  /* Button styles */
+  .login-button, .register-button, .next-button, .previous-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .login-button:hover, .register-button:hover, .next-button:hover, .previous-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Tab navigation styles for registration */
+  .tab-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .tab-navigation button {
+    background-color: #eee;
+    color: #333;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .tab-navigation button.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Additional styling for alignment */
+  .align-center {
+    text-align: center;
+  }
+  
+  /* Link styles */
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
