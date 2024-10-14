@@ -15,6 +15,13 @@ router.post('/upload', upload.single('file'), async (req, res) => {
             return res.status(400).json({ message: 'No file uploaded' });
         }
 
+        // Validate that the uploaded file is a text file
+        const allowedMimetypes = ['text/plain'];
+        if (!allowedMimetypes.includes(req.file.mimetype)) {
+            fs.unlinkSync(req.file.path); // Remove the file if it's not a valid text file
+            return res.status(400).json({ message: 'Uploaded file is not a valid text file' });
+        }
+
         // Read the uploaded file
         const filePath = req.file.path;
         const fileContents = fs.readFileSync(filePath, 'utf-8');
@@ -84,6 +91,5 @@ router.delete('/:id', async (req, res) => {
         res.status(500).json({ message: err.message }); // Handle any errors
     }
 });
-
 
 module.exports = router;
