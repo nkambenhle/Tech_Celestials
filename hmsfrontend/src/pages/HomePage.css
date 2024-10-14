@@ -5,6 +5,8 @@
   --jordy-blue: #B3CDFEff;
   --alice-blue: #EBF1FEff;
   --glaucous: #7180EAff;
+
+  --gradient: linear-gradient(90deg, var(--medium-slate-blue), var(--lavender-web), var(--jordy-blue), var(--alice-blue), var(--glaucous));
 }
 
 body {
@@ -17,7 +19,15 @@ body {
 .navbar-logo-img {
   height: 50px; /* Adjust this to your desired logo size */
   width: auto;
+  transition: box-shadow 0.3s ease; /* Smooth transition for the glow effect */
 }
+
+/* Add hover effect with glaucous-colored circular glow */
+.navbar-logo-img:hover {
+  box-shadow: 0 0 15px 10px var(--glaucous), 
+              0 0 30px 15px rgba(113, 128, 234, 0.5); /* Drop shadow with glowing effect */
+}
+
 
 .navbar {
   display: flex;
