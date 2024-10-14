@@ -1,6 +1,41 @@
 const express = require('express');
+const jwt = require('jsonwebtoken'); 
 const router = express.Router();
 const Feedback = require('../models/feedback');
+
+// Middleware to authenticate user 
+const authenticateUser = (req, res, next) => {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+
+    if (!token) return res.status(401).json({ message: 'Unauthorized' });
+
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+        if (err) return res.status(403).json({ message: 'Forbidden' });
+        req.user = user; // Save the user information to the request
+        console.log("Authenticated User:", req.user); // Log the user information
+        next();
+    });
+};
+
+// GET feedbacks for submissions made by the logged-in user
+router.get('/my-feedbacks', authenticateUser, async (req, res) => {
+    try {
+        // Find all feedbacks where the Submission_ID points to a submission made by the logged-in user
+        const feedbacks = await Feedback.find()
+            .populate({
+                path: 'Submission_ID',   // Populate the Submission_ID
+                match: { User_ID: req.user.user.id }  // Updated to use req.user.user.id
+            });
+
+        // Filter out feedbacks where the match did not return any submissions
+        const userFeedbacks = feedbacks.filter(feedback => feedback.Submission_ID !== null);
+
+        res.json(userFeedbacks);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
 
 // GET all feedbacks
 router.get('/', async (req, res) => {
@@ -62,4 +97,3 @@ router.delete('/:id', async (req, res) => {
 });
 
 module.exports = router;
-
