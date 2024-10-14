@@ -1,8 +1,20 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // For navigation
 import './UploadPage.css';
+import './HomePage.css'; 
+import logo from '../images/NWU_Logo-removebg.png'; // Logo image import
 
 const UploadPage = () => {
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+   // Toggle menu visibility
+   const toggleMenu = () => {
+    setIsMenuOpen(prevState => !prevState); // Toggle the menu state
+  };
+
+    //Video stuff
     const [videoFile, setVideoFile] = useState(null);
     const [studentNumber, setStudentNumber] = useState('');
 
@@ -29,6 +41,30 @@ const UploadPage = () => {
 
     return (
         <div className="feedback-page-container">
+            {/* Navbar */}
+            <nav className="navbar">
+                <div className="navbar-logo">
+                <Link to="/">
+                    <img src={logo} alt="HMS Feedback System Logo" className="navbar-logo-img" />
+                </Link>
+                </div>
+
+                {/* Burger Menu */}
+                <div className="burger-menu" onClick={toggleMenu}>
+                <span className="burger-bar"></span>
+                <span className="burger-bar"></span>
+                <span className="burger-bar"></span>
+                </div>
+
+                {/* Navbar Links */}
+                <ul className={`navbar-links ${isMenuOpen ? 'navbar-links-active' : ''}`}>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/assignments">Assignments</Link></li>
+                <li><Link to="/upload">Upload</Link></li>
+                <li><Link to="/feedback">Feedback</Link></li>
+                </ul>
+            </nav>
+            
             <h2>Submit Video Assignment</h2>
             <form className="feedback-form" onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -50,7 +86,13 @@ const UploadPage = () => {
                 <a href="/" className="nav-link">Home</a>
                 <a href="/assignments" className="nav-link">Assignments</a>
             </div>
-        </div>
+        {/* Footer */}
+        <footer className="footer">
+            <p>&copy; 2024 HMS Feedback System | Designed by Tech Celestials</p>
+        </footer>
+            </div>
+
+        
     );
 };
 

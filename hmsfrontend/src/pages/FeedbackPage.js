@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './FeedbackPage.css';
+import './HomePage.css';
+import logo from '../images/NWU_Logo-removebg.png'; // Logo image import
 
 const subjects = {
     "HMDC 121": [
@@ -26,8 +29,39 @@ const FeedbackPage = () => {
         setSelectedVideo(null);
     };
 
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+   // Toggle menu visibility
+   const toggleMenu = () => {
+    setIsMenuOpen(prevState => !prevState); // Toggle the menu state
+  };
+
     return (
         <div className="assignments-container">
+            {/* Navbar */}
+            <nav className="navbar">
+                <div className="navbar-logo">
+                <Link to="/">
+                    <img src={logo} alt="HMS Feedback System Logo" className="navbar-logo-img" />
+                </Link>
+                </div>
+
+                {/* Burger Menu */}
+                <div className="burger-menu" onClick={toggleMenu}>
+                <span className="burger-bar"></span>
+                <span className="burger-bar"></span>
+                <span className="burger-bar"></span>
+                </div>
+
+                {/* Navbar Links */}
+                <ul className={`navbar-links ${isMenuOpen ? 'navbar-links-active' : ''}`}>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/assignments">Assignments</Link></li>
+                <li><Link to="/upload">Upload</Link></li>
+                <li><Link to="/feedback">Feedback</Link></li>
+                </ul>
+            </nav>
+
             <h2>Submitted Assignments by Subject</h2>
             <div className="subject-groups">
                 {Object.keys(subjects).map(subject => (
@@ -67,6 +101,10 @@ const FeedbackPage = () => {
                     </div>
                 </div>
             )}
+            {/* Footer */}
+            <footer className="footer">
+                <p>&copy; 2024 HMS Feedback System | Designed by Tech Celestials</p>
+            </footer>
         </div>
     );
 };
