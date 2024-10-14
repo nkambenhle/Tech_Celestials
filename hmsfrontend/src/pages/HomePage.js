@@ -1,20 +1,36 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link for navigation
+import React, { useState } from 'react';  // useState for state management
+import { Link } from 'react-router-dom'; // For navigation
 import './HomePage.css'; 
-import logo from '../images/NWU_Logo.png'; // Import the logo image
-import heroImage from '../images/Hero03_11zon.jpg';  // Import the hero image
+import logo from '../images/NWU_Logo.png'; // Logo image import
+import heroImage from '../images/Hero03_11zon.jpg';  // Hero image import
 
 const HomePage = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+   // Toggle menu visibility
+   const toggleMenu = () => {
+    setIsMenuOpen(prevState => !prevState); // Toggle the menu state
+  };
+
   return (
     <div className="homepage">
       {/* Navbar */}
       <nav className="navbar">
-      <div className="navbar-logo">
+        <div className="navbar-logo">
           <Link to="/">
             <img src={logo} alt="HMS Feedback System Logo" className="navbar-logo-img" />
           </Link>
-      </div>
-        <ul className="navbar-links">
+        </div>
+
+        {/* Burger Menu */}
+        <div className="burger-menu" onClick={toggleMenu}>
+          <span className="burger-bar"></span>
+          <span className="burger-bar"></span>
+          <span className="burger-bar"></span>
+        </div>
+
+        {/* Navbar Links */}
+        <ul className={`navbar-links ${isMenuOpen ? 'navbar-links-active' : ''}`}>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/assignments">Assignments</Link></li>
           <li><Link to="/upload">Upload</Link></li>
