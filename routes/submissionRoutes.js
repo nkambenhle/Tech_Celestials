@@ -2,6 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const multer = require('multer');
+const jwt = require('jsonwebtoken');
 const { BlobServiceClient } = require('@azure/storage-blob');
 const Submission = require('../models/submission');
 const router = express.Router();
@@ -31,6 +32,37 @@ ensureContainerExists().catch((err) => {
 
 // Initialize Multer for file uploads (temporary storage)
 const upload = multer({ dest: 'uploads/' }); // Temporary folder
+
+//Middleware
+const authenticateUser = (req, res, next) => {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+
+    if (!token) return res.status(401).json({ message: 'Unauthorized' });
+
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+        if (err) return res.status(403).json({ message: 'Forbidden' });
+        req.user = user; // Save the user information to the request
+        console.log("Authenticated User:", req.user); // Log the user information
+        next();
+    });
+};
+
+// GET submissions made by the logged-in user
+router.get('/my-submissions', authenticateUser, async (req, res) => {
+    try {
+        // Find all submissions where User_ID matches the logged-in user's ID
+        const submissions = await Submission.find({ User_ID: req.user.user.id }) // Use req.user.id
+            .populate({
+                path: 'Assignment_ID',   // Populate the Assignment_ID
+                select: 'Title Description Marks Open_Date Due_Date Video' // Select necessary fields from Assignment
+            });
+
+        res.json(submissions);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
 
 // GET all submissions
 router.get('/', async (req, res) => {
