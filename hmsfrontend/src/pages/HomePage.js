@@ -1,10 +1,17 @@
 import React, { useState } from 'react';  // useState for state management
 import { Link } from 'react-router-dom'; // For navigation
 import './HomePage.css'; 
-import logo from '../images/NWU_Logo.png'; // Logo image import
+import logo from '../images/NWU_Logo-removebg.png'; // Logo image import
 import heroImage from '../images/Hero03_11zon.jpg';  // Hero image import
 
 const HomePage = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+   // Toggle menu visibility
+   const toggleMenu = () => {
+    setIsMenuOpen(prevState => !prevState); // Toggle the menu state
+  };
+
   return (
     <div className="homepage">
       {/* Navbar */}
@@ -37,9 +44,7 @@ const HomePage = () => {
         <div className="hero-content">
           <h1>Welcome to the HMS Feedback System</h1>
           <p>Delivering faster feedback to students through video assignments.</p>
-          <Link to="/login"><Link></Link>
           <button className="hero-button">Get Started</button>
-          </Link>
         </div>
       </section>
 
