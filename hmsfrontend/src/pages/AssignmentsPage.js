@@ -30,7 +30,7 @@ const AssignmentsPage = () => {
   };
 
     return (
-        <div className="upload-page-container">
+        <div className="main_container">
             {/* Navbar */}
             <nav className="navbar">
                 <div className="navbar-logo">
@@ -55,6 +55,7 @@ const AssignmentsPage = () => {
                 </ul>
             </nav>
 
+            <div className="upload-page-container">
                 <h2>Create a New Assignment</h2>
                 <form className="assignment-form" onSubmit={handleSubmit}>
                     <label>
@@ -98,14 +99,15 @@ const AssignmentsPage = () => {
                     <button type="submit" className="submit-button">Create Assignment</button>
                 </form>
 
-            <div className="navigation-links">
-                <Link to="/" className="nav-link">Home</Link>
-                <Link to="/assignments" className="nav-link">View Assignments</Link>
+                <div className="navigation-links">
+                    <Link to="/" className="nav-link">Home</Link>
+                    <Link to="/assignments" className="nav-link">View Assignments</Link>
+                </div>
+                {/* Footer */}
+                <footer className="footer">
+                    <p>&copy; 2024 HMS Feedback System | Designed by Tech Celestials</p>
+                </footer>
             </div>
-            {/* Footer */}
-            <footer className="footer">
-                <p>&copy; 2024 HMS Feedback System | Designed by Tech Celestials</p>
-            </footer>
         </div>
     );
 };
