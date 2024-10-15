@@ -40,7 +40,7 @@ const UploadPage = () => {
     };
 
     return (
-        <div className="feedback-page-container">
+        <div className="main_container">
             {/* Navbar */}
             <nav className="navbar">
                 <div className="navbar-logo">
@@ -64,35 +64,36 @@ const UploadPage = () => {
                 <li><Link to="/feedback">Feedback</Link></li>
                 </ul>
             </nav>
-            
-            <h2>Submit Video Assignment</h2>
-            <form className="feedback-form" onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label>Upload Video:</label>
-                    <input type="file" accept="video/*" onChange={handleVideoChange} />
+
+            <div className="feedback-page-container">
+                <h2>Submit Video Assignment</h2>
+                <form className="feedback-form" onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label>Upload Video:</label>
+                        <input type="file" accept="video/*" onChange={handleVideoChange} />
+                    </div>
+                    <div className="form-group">
+                        <label>Student Number:</label>
+                        <input
+                            type="text"
+                            value={studentNumber}
+                            onChange={handleStudentNumberChange}
+                            placeholder="Enter student number"
+                        />
+                    </div>
+                    <button type="submit" className="submit-button">Submit</button>
+                </form>
+                <div className="navigation-links">
+                    <a href="/" className="nav-link">Home</a>
+                    <a href="/assignments" className="nav-link">Assignments</a>
                 </div>
-                <div className="form-group">
-                    <label>Student Number:</label>
-                    <input
-                        type="text"
-                        value={studentNumber}
-                        onChange={handleStudentNumberChange}
-                        placeholder="Enter student number"
-                    />
-                </div>
-                <button type="submit" className="submit-button">Submit</button>
-            </form>
-            <div className="navigation-links">
-                <a href="/" className="nav-link">Home</a>
-                <a href="/assignments" className="nav-link">Assignments</a>
-            </div>
-        {/* Footer */}
-        <footer className="footer">
-            <p>&copy; 2024 HMS Feedback System | Designed by Tech Celestials</p>
-        </footer>
             </div>
 
-        
+            {/* Footer */}
+            <footer className="footer">
+                <p>&copy; 2024 HMS Feedback System | Designed by Tech Celestials</p>
+            </footer>
+        </div>
     );
 };
 
