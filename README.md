@@ -43,7 +43,7 @@ Technology Stack
 
 Backend
 - Node.js with Express.js for building APIs.
-- MongoDB for storing user data, assignments, and feedback.
+- MongoDB for storing user data, assignments,submissions and feedback.
 - ffmpeg for video compression and format conversion.
 - Azure for video storage and streaming.
 
@@ -82,31 +82,38 @@ Project Structure
 human-movement-video-feedback/
 ├── backend/            # Backend (Node.js, Express)
 ├── frontend/           # Frontend (React.js)
-├── mobile/             # Mobile Application (React Native)
+├── mobile/             # Mobile Application (Kotlin)
 └── README.md           # Project readme
 ```
 
 ---
 
 API Endpoints
-Online Hosting: https://hms-ehgyh4f5hhavg5at.southafricanorth-01.azurewebsites.net/
+Online Hosting: https://techcelestialsapp-fdhua4hhdwb9f4dc.southafricanorth-01.azurewebsites.net/
 Authentication
-- `POST http://localhost:3000/auth/login` - Authenticate users based on role (Admin, Lecturer, Student).
-- Online Hosting: https://hms-ehgyh4f5hhavg5at.southafricanorth-01.azurewebsites.net/login
+- `POST https://techcelestialsapp-fdhua4hhdwb9f4dc.southafricanorth-01.azurewebsites.net/auth/register` - Checks wheter student number is present in the database before user can register.
+- `POST https://techcelestialsapp-fdhua4hhdwb9f4dc.southafricanorth-01.azurewebsites.net/auth/login` - Authenticate users with their username( which is their 8 digit studenet number) and their password.
+- Online Hosting: https://techcelestialsapp-fdhua4hhdwb9f4dc.southafricanorth-01.azurewebsites.net/auth/login
 
 Video Submissions
-- `POST http://localhost:3000/submissions` - Upload a new video.
-- Online Hosting: https://hms-ehgyh4f5hhavg5at.southafricanorth-01.azurewebsites.net/submissions
+- `POST https://techcelestialsapp-fdhua4hhdwb9f4dc.southafricanorth-01.azurewebsites.net/submissions` - Upload a new video.
+- Online Hosting: https://techcelestialsapp-fdhua4hhdwb9f4dc.southafricanorth-01.azurewebsites.net/submissions
+
+Browse own Submissions
+- `GET https://techcelestialsapp-fdhua4hhdwb9f4dc.southafricanorth-01.azurewebsites.net/submissions/my-submissions` - Retrieves submisions created by the logged-in user.
+- Online Hosting: https://techcelestialsapp-fdhua4hhdwb9f4dc.southafricanorth-01.azurewebsites.net/submissions/my-submissions
 
 Feedback
-- `POST http://localhost:3000/feedbacks` - Provide feedback and assign marks to a video (Lecturers only).
-- `GET http://localhost:3000/feedacks` - Retrieve feedback for a specific video that was under a submission. (Students and Lecturers).
+- `POST https://techcelestialsapp-fdhua4hhdwb9f4dc.southafricanorth-01.azurewebsites.net/feedbacks` - Provide feedback and assigns marks to a video under the specific submission .
+- `GET https://techcelestialsapp-fdhua4hhdwb9f4dc.southafricanorth-01.azurewebsites.net/feedbacks/my-feedbacks` - Retrieves feedback of the logged-in user.
+- `GET https://techcelestialsapp-fdhua4hhdwb9f4dc.southafricanorth-01.azurewebsites.net/feedbacks` - Retrieves all feedback 
 - Online Hosting: https://hms-ehgyh4f5hhavg5at.southafricanorth-01.azurewebsites.net/feedacks
 
 Assignments
-- `POST http://localhost:3000/assignments` - Create a new assignment (Lecturers/Admins only).
-- `GET http://localhost:3000/assignments` - Get all assignments.
-- Online Hosting: https://hms-ehgyh4f5hhavg5at.southafricanorth-01.azurewebsites.net/assignments
+- `POST https://techcelestialsapp-fdhua4hhdwb9f4dc.southafricanorth-01.azurewebsites.net/assignments` - Create a new assignment (Lecturers/Admins only).
+- `GET https://techcelestialsapp-fdhua4hhdwb9f4dc.southafricanorth-01.azurewebsites.net/assignments` - View all assignments.
+- `GET https://techcelestialsapp-fdhua4hhdwb9f4dc.southafricanorth-01.azurewebsites.net/assignments/my-assignments` - View all created by the logged in user.
+- Online Hosting: https://techcelestialsapp-fdhua4hhdwb9f4dc.southafricanorth-01.azurewebsites.net/assignmemts
 
 ---
 
