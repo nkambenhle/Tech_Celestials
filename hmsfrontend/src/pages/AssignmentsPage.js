@@ -9,11 +9,23 @@ const AssignmentsPage = () => {
     const [subject, setSubject] = useState('');
     const [dueDate, setDueDate] = useState('');
     const [description, setDescription] = useState('');
+    const [assignments, setAssignments] = useState([]);
+    const [showAssignments, setShowAssignments] = useState(false); // State to toggle assignments visibility
+    const [isMenuOpen, setIsMenuOpen] = useState(false); // State to toggle the menu
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Handle form submission
-        console.log('New Assignment:', { title, subject, dueDate, description });
+        // Create a new assignment object
+        const newAssignment = {
+            id: assignments.length + 1,
+            title,
+            subject,
+            dueDate,
+            description,
+            createdAt: new Date().toISOString().split('T')[0], // Get current date
+        };
+        // Add the new assignment to the list
+        setAssignments([...assignments, newAssignment]);
         // Reset form
         setTitle('');
         setSubject('');
@@ -22,36 +34,38 @@ const AssignmentsPage = () => {
         alert('Assignment created successfully!');
     };
 
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const handleViewAssignments = () => {
+        setShowAssignments(!showAssignments); // Toggle the visibility of the assignments list
+    };
 
-   // Toggle menu visibility
-   const toggleMenu = () => {
-    setIsMenuOpen(prevState => !prevState); // Toggle the menu state
-  };
+    // Toggle menu visibility
+    const toggleMenu = () => {
+        setIsMenuOpen(prevState => !prevState); // Toggle the menu state
+    };
 
     return (
         <div className="main_container">
             {/* Navbar */}
             <nav className="navbar">
                 <div className="navbar-logo">
-                <Link to="/">
-                    <img src={logo} alt="HMS Feedback System Logo" className="navbar-logo-img" />
-                </Link>
+                    <Link to="/">
+                        <img src={logo} alt="HMS Feedback System Logo" className="navbar-logo-img" />
+                    </Link>
                 </div>
 
                 {/* Burger Menu */}
                 <div className="burger-menu" onClick={toggleMenu}>
-                <span className="burger-bar"></span>
-                <span className="burger-bar"></span>
-                <span className="burger-bar"></span>
+                    <span className="burger-bar"></span>
+                    <span className="burger-bar"></span>
+                    <span className="burger-bar"></span>
                 </div>
 
                 {/* Navbar Links */}
                 <ul className={`navbar-links ${isMenuOpen ? 'navbar-links-active' : ''}`}>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/assignments">Assignments</Link></li>
-                <li><Link to="/upload">Upload</Link></li>
-                <li><Link to="/feedback">Feedback</Link></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/assignments">Assignments</Link></li>
+                    <li><Link to="/upload">Upload</Link></li>
+                    <li><Link to="/feedback">Feedback</Link></li>
                 </ul>
             </nav>
 
@@ -99,10 +113,35 @@ const AssignmentsPage = () => {
                     <button type="submit" className="submit-button">Create Assignment</button>
                 </form>
 
+                {/* Navigation Links */}
                 <div className="navigation-links">
-                    <Link to="/" className="nav-link">Home</Link>
-                    <Link to="/assignments" className="nav-link">View Assignments</Link>
+                <Link to="/" className="nav-link">Home</Link>
+                <Link to="/view-assignment" className="view-assignment-button">View Assignment
+               </Link>
+                    <button onClick={handleViewAssignments} className="nav-link">
+                        {showAssignments ? 'Hide Assignments' : 'View Assignments'}
+                    </button>
                 </div>
+
+                {/* Assignments List Section */}
+                {showAssignments && (
+                    <div className="assignments-list">
+                        {assignments.length > 0 ? (
+                            assignments.map((assignment) => (
+                                <div key={assignment.id} className="assignment-item">
+                                    <h3>{assignment.title}</h3>
+                                    <p><strong>Subject:</strong> {assignment.subject}</p>
+                                    <p><strong>Due Date:</strong> {assignment.dueDate}</p>
+                                    <p><strong>Description:</strong> {assignment.description}</p>
+                                    <p><strong>Date Created:</strong> {assignment.createdAt}</p>
+                                </div>
+                            ))
+                        ) : (
+                            <p>No assignments available.</p>
+                        )}
+                    </div>
+                )}
+                
                 {/* Footer */}
                 <footer className="footer">
                     <p>&copy; 2024 HMS Feedback System | Designed by Tech Celestials</p>
