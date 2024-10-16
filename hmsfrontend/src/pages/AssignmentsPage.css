@@ -1,17 +1,72 @@
-.upload-page-container {
-    max-width: 600px;
+/* AssignmentsPage.css */
+
+/* Main container styling */
+.main_container {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background-color: var(--alice-blue);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    color: var(--medium-slate-blue);
-    text-align: center;
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003366;
+    padding: 10px 20px;
+    color: white;
 }
 
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo-img {
+    width: 100px;
+    height: auto;
+}
+
+/* Burger menu styling */
+.burger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.burger-bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+/* Navbar links styling */
+.navbar-links {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar-links-active {
+    display: block;
+}
+
+/* Upload page container styling */
+.upload-page-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Form styling */
 .assignment-form {
     display: flex;
     flex-direction: column;
@@ -19,88 +74,111 @@ h2 {
 }
 
 .assignment-form label {
-    display: flex;
-    flex-direction: column;
-    color: var(--glaucous);
     font-weight: bold;
 }
 
 .assignment-form input,
 .assignment-form textarea {
-    padding: 10px;
-    border: 1px solid var(--jordy-blue);
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 16px;
-    margin-top: 5px;
 }
 
 .assignment-form textarea {
     resize: vertical;
-    height: 100px;
 }
 
+/* Button styling */
 .submit-button {
-    background-color: var(--medium-slate-blue);
+    background-color: #28a745;
     color: white;
+    padding: 10px 20px;
     border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    font-size: 16px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 .submit-button:hover {
-    background-color: var(--glaucous);
+    background-color: #218838;
 }
 
-.navigation-links {
-    margin-top: 20px;
-    text-align: center;
+/* Navigation buttons styling */
+.navigation-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
 }
 
-.nav-link {
-    background-color: var(--medium-slate-blue); /* Button background color */
-    color: white; /* Text color */
-    cursor: pointer;
-    text-decoration: none; /* Remove underline */
-    padding: 10px 20px; /* Button padding */
+.nav-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
     border: none;
-    border-radius: 4px; /* Rounded corners */
-    display: inline-block; /* Make it behave like a button */
-    margin: 5px; /* Add some spacing between buttons */
-    transition: background-color 0.3s; /* Smooth hover transition */
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-/* Hover effect for nav-link */
-.nav-link:hover {
-    background-color: var(--glaucous);
+.nav-button:hover {
+    background-color: #0056b3;
 }
 
-/* Style for the assignments list */
+/* Assignments list styling */
 .assignments-list {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: var(--alice-blue);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
 .assignment-item {
-    margin-bottom: 20px;
+    background-color: #e9ecef;
     padding: 15px;
-    background-color: white;
-    border: 1px solid var(--jordy-blue);
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 15px;
 }
 
-.assignment-item h3 {
-    margin: 0;
-    color: var(--medium-slate-blue);
+.edit-button,
+.delete-button {
+    background-color: #ffc107;
+    color: black;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
 }
 
-.assignment-item p {
-    margin: 5px 0;
-    color: var(--glaucous);
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: #e0a800;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+/* Footer styling */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #6c757d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar-links-active {
+        display: flex;
+    }
+
+    .burger-menu {
+        display: block;
+    }
 }
