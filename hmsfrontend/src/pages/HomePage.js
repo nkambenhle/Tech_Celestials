@@ -48,9 +48,7 @@ const HomePage = () => {
         <div className="hero-content">
           <h1>Welcome to the HMS Feedback System</h1>
           <p>Delivering faster feedback to students through video assignments.</p>
-          <Link to="/login">
           <button className="hero-button">Get Started</button>
-          </Link>
         </div>
       </section>
 
