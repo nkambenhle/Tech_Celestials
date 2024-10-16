@@ -12,10 +12,10 @@ const RegisterForm = ({ toggleForm }) => {
     name: '',
     surname: '',
     username: '',
-    role: '',
+    role: '', // Store selected role (updated from 'role' input)
     email: '',
     field: '',
-    module: '', // Store selected module (updated from 'modules' to 'module')
+    module: '', // Store selected module
     password: '',
     confirmPassword: '',
   });
@@ -107,15 +107,19 @@ const RegisterForm = ({ toggleForm }) => {
         <div className="form-step">
           <div className="form-group">
             <label htmlFor="role">Role</label>
-            <input
-              type="text"
+            <select
               id="role"
               name="role"
-              placeholder="Enter your role"
               value={formData.role}
               onChange={handleChange}
               required
-            />
+            >
+              <option value="">Select a role</option>
+              <option value="Student">Student</option>
+              <option value="Lecturer">Lecturer</option>
+              <option value="Admin">Admin</option>
+              <option value="Developer">Developer</option>
+            </select>
           </div>
           <div className="form-group">
             <label htmlFor="email">Email</label>
