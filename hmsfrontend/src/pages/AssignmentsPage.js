@@ -1,8 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './AssignmentsPage.css';
+import './HomePage.css';
 import logo from '../images/NWU_Logo-removebg.png'; // Logo image import
-import axios from 'axios';
 
 const AssignmentsPage = () => {
     const [title, setTitle] = React.useState('');
@@ -13,7 +13,8 @@ const AssignmentsPage = () => {
     const [assignments, setAssignments] = React.useState([]);
     const [editIndex, setEditIndex] = React.useState(null);
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-    const navigate = useNavigate(); // useNavigate hook
+    const [isModalOpen, setIsModalOpen] = React.useState(false); // State for modal visibility
+    const [showSuccessMessage, setShowSuccessMessage] = React.useState(false); // State for success message
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -32,18 +33,22 @@ const AssignmentsPage = () => {
             updatedAssignments[editIndex] = newAssignment;
             setAssignments(updatedAssignments);
             setEditIndex(null);
-            alert('Assignment updated successfully!');
+            setShowSuccessMessage(true); // Show success message for edit
         } else {
             setAssignments([...assignments, newAssignment]);
-            alert('Assignment created successfully!');
+            setShowSuccessMessage(true); // Show success message for new assignment
         }
 
-        // Reset form fields
+        // Clear form fields after submission
         setTitle('');
         setSubject('');
         setDueDate('');
         setDescription('');
         setCreator('');
+        setIsModalOpen(false); // Close the modal if it was open
+
+        // Hide the success message after a few seconds
+        setTimeout(() => setShowSuccessMessage(false), 3000);
     };
 
     const handleEdit = (index) => {
@@ -54,6 +59,7 @@ const AssignmentsPage = () => {
         setDescription(assignmentToEdit.description);
         setCreator(assignmentToEdit.creator);
         setEditIndex(index);
+        setIsModalOpen(false); // Close the modal if it was open
     };
 
     const handleDelete = (index) => {
@@ -66,12 +72,12 @@ const AssignmentsPage = () => {
         setIsMenuOpen((prevState) => !prevState);
     };
 
-    const navigateToHome = () => {
-        navigate('/'); // Navigate to the Home page
+    const openModal = () => {
+        setIsModalOpen(true); // Open the modal
     };
 
-    const navigateToViewAssignments = () => {
-        navigate('/view-assignments'); // Navigate to the View Assignments page
+    const closeModal = () => {
+        setIsModalOpen(false); // Close the modal
     };
 
     return (
@@ -79,7 +85,9 @@ const AssignmentsPage = () => {
             {/* Navbar */}
             <nav className="navbar">
                 <div className="navbar-logo">
-                    <img src={logo} alt="HMS Feedback System Logo" className="navbar-logo-img" />
+                    <Link to="/">
+                        <img src={logo} alt="HMS Feedback System Logo" className="navbar-logo-img" />
+                    </Link>
                 </div>
 
                 {/* Burger Menu */}
@@ -152,37 +160,42 @@ const AssignmentsPage = () => {
                     <button type="submit" className="submit-button">
                         {editIndex !== null ? 'Update Assignment' : 'Create Assignment'}
                     </button>
-
-                    {/* Navigation Buttons */}
-                    <div className="navigation-buttons">
-                        <button type="button" onClick={navigateToHome} className="nav-button">
-                            Home
-                        </button>
-                        <button type="button" onClick={navigateToViewAssignments} className="nav-button">
-                            View Assignments
-                        </button>
-                    </div>
                 </form>
 
-                {/* Assignments List Section */}
-                <div className="assignments-list">
-                    {assignments.length > 0 ? (
-                        assignments.map((assignment, index) => (
-                            <div key={assignment.id} className="assignment-item">
-                                <h3>{assignment.title}</h3>
-                                <p><strong>Subject:</strong> {assignment.subject}</p>
-                                <p><strong>Due Date:</strong> {assignment.dueDate}</p>
-                                <p><strong>Description:</strong> {assignment.description}</p>
-                                <p><strong>Creator:</strong> {assignment.creator}</p>
-                                <p><strong>Date Created:</strong> {assignment.createdAt}</p>
-                                <button onClick={() => handleEdit(index)} className="edit-button">Edit</button>
-                                <button onClick={() => handleDelete(index)} className="delete-button">Delete</button>
-                            </div>
-                        ))
-                    ) : (
-                        <p>No assignments available.</p>
-                    )}
+                {/* Success Message */}
+                {showSuccessMessage && <div className="success-message">Assignment saved successfully!</div>}
+
+                {/* Navigation Buttons */}
+                <div className="navigation-buttons">
+                    <Link to="/" className="nav-link">Home</Link>
+                    <button onClick={openModal} className="nav-link">View Assignments</button>
                 </div>
+
+                {/* Modal for Assignments List */}
+                {isModalOpen && (
+                    <div className="modal-overlay">
+                        <div className="modal-content">
+                            <h3>Assignments List</h3>
+                            <button onClick={closeModal} className="close-modal-button">Close</button>
+                            {assignments.length > 0 ? (
+                                assignments.map((assignment, index) => (
+                                    <div key={assignment.id} className="assignment-item">
+                                        <h4>{assignment.title}</h4>
+                                        <p><strong>Subject:</strong> {assignment.subject}</p>
+                                        <p><strong>Due Date:</strong> {assignment.dueDate}</p>
+                                        <p><strong>Description:</strong> {assignment.description}</p>
+                                        <p><strong>Creator:</strong> {assignment.creator}</p>
+                                        <p><strong>Date Created:</strong> {assignment.createdAt}</p>
+                                        <button onClick={() => handleEdit(index)} className="edit-button">Edit</button>
+                                        <button onClick={() => handleDelete(index)} className="delete-button">Delete</button>
+                                    </div>
+                                ))
+                            ) : (
+                                <p>No assignments available.</p>
+                            )}
+                        </div>
+                    </div>
+                )}
 
                 {/* Footer */}
                 <footer className="footer">

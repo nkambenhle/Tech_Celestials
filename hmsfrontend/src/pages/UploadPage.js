@@ -30,11 +30,11 @@ const UploadPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!videoFile || !studentNumber) {
-            alert('Please provide a video and a student number.');
+            alert('Please provide a file and a username.');
             return;
         }
         // Handle file upload and form submission logic here
-        alert(`Video uploaded successfully for student number: ${studentNumber}`);
+        alert(`File uploaded successfully for user: ${studentNumber}`);
         // Reset form fields
         setVideoFile(null);
         setStudentNumber('');
@@ -67,19 +67,19 @@ const UploadPage = () => {
             </nav>
 
             <div className="feedback-page-container">
-                <h2>Submit Video Assignment</h2>
+                <h2>Upload registered students</h2>
                 <form className="feedback-form" onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label>Upload Video:</label>
+                        <label>Upload File:</label>
                         <input type="file" accept="video/*" onChange={handleVideoChange} />
                     </div>
                     <div className="form-group">
-                        <label>Student Number:</label>
+                        <label>Username:</label>
                         <input
                             type="text"
                             value={studentNumber}
                             onChange={handleStudentNumberChange}
-                            placeholder="Enter student number"
+                            placeholder="Enter username"
                         />
                     </div>
                     <button type="submit" className="submit-button">Submit</button>
