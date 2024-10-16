@@ -3,8 +3,12 @@ import { Link } from 'react-router-dom'; // For navigation
 import './HomePage.css'; 
 import logo from '../images/NWU_Logo-removebg.png'; // Logo image import
 import heroImage from '../images/Hero03_11zon.jpg';  // Hero image import
+import axios from 'axios';
 
 const HomePage = () => {
+
+  const API_URL = process.env.REACT_APP_API_URL;
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
    // Toggle menu visibility
@@ -44,9 +48,7 @@ const HomePage = () => {
         <div className="hero-content">
           <h1>Welcome to the HMS Feedback System</h1>
           <p>Delivering faster feedback to students through video assignments.</p>
-          <Link to="/login">
           <button className="hero-button">Get Started</button>
-          </Link>
         </div>
       </section>
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './AssignmentsPage.css';
 import logo from '../images/NWU_Logo-removebg.png'; // Logo image import
+import axios from 'axios';
 
 const AssignmentsPage = () => {
     const [title, setTitle] = React.useState('');
